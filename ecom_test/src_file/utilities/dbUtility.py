@@ -2,8 +2,8 @@
 
 import pymysql
 import logging as logger
-from Ecom_test.src.utilities.credentialsUtility import CredentialsUtility
-from Ecom_test.src.config.MainConfigs import MainConfigs
+from ecom_test.src_file.utilities.credentialsUtility import CredentialsUtility
+from ecom_test.src_file.config.MainConfigs import MainConfigs
 
 # Define Class for Data base Connection
 class DBUtility(object):

@@ -1,5 +1,5 @@
 
-from Ecom_test.src.api_helpers.CustomersApiHelpers import CustomersAPIHelper
+from ecom_test.src_file.api_helpers.CustomersApiHelpers import CustomersAPIHelper
 import pytest
 import logging as logger
 
