@@ -1,7 +1,7 @@
 import pytest
 import logging as logger
-from Ecom_test.src.utilities.generic_utilities import generate_random_email_and_password
-from Ecom_test.src.api_helpers.CustomersApiHelpers import CustomersAPIHelper
+from ecom_test.src_file.utilities.generic_utilities import generate_random_email_and_password
+from ecom_test.src_file.api_helpers.CustomersApiHelpers import CustomersAPIHelper
 
 
 
@@ -22,7 +22,8 @@ def create_user_email_password_only():
 
     return data
 
-# Verify create customer with only email and password provided has the names (first name and last name) of the customer will be empty strings in the system.
+# Verify create customer with only email and password provided has the names/
+# (first name and last name) of the customer will be empty strings in the system.
 @pytest.mark.customers
 @pytest.mark.tcid31
 def test_create_customer_names_should_be_empty_string_if_not_provided():

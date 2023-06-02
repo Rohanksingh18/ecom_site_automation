@@ -1,7 +1,7 @@
 
 
 import pytest
-from Ecom_test.src.pages.MyAccountSignedOutPage import MyAccountSignedOutPage
+from ecom_test.src_file.pages.MyAccountSignedOutPage import MyAccountSignedOutPage
 
 pytestmark = [pytest.mark.feregression, pytest.mark.fesmoke, pytest.mark.my_account]
 

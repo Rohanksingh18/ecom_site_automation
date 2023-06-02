@@ -1,8 +1,8 @@
 from selenium.webdriver import ActionChains
 
-from Ecom_test.src.selenium_extended.SeleniumExtended import SeleniumExtended
-from Ecom_test.src.config.MainConfigs import MainConfigs
-from Ecom_test.src.pages.locators.HomePageLocators import HomePageLocators
+from ecom_test.src_file.selenium_extended.SeleniumExtended import SeleniumExtended
+from ecom_test.src_file.config.MainConfigs import MainConfigs
+from ecom_test.src_file.pages.locators.HomePageLocators import HomePageLocators
 
 
 

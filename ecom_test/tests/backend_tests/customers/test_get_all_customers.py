@@ -1,5 +1,5 @@
 import pytest
-from Ecom_test.src.api_helpers.CustomersApiHelpers import CustomersAPIHelper
+from ecom_test.src_file.api_helpers.CustomersApiHelpers import CustomersAPIHelper
 
 
 @pytest.mark.customers
