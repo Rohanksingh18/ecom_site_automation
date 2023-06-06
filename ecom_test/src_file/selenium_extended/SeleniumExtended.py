@@ -10,7 +10,7 @@ class SeleniumExtended:
 
     def __init__(self, driver):
         self.driver = driver
-        self.default_timeout = 5
+        self.default_timeout = 10
 
     def wait_and_input_text(self, locator, text, timeout=None):
         timeout = timeout if timeout else self.default_timeout
@@ -26,7 +26,7 @@ class SeleniumExtended:
                 EC.element_to_be_clickable(locator)
             ).click()
         except StaleElementReferenceException:
-            time.sleep(2)
+            time.sleep(5)
             WebDriverWait(self.driver, timeout).until(
                 EC.visibility_of_element_located(locator),
                 message=f"Element with locator {locator}, is not clickable."

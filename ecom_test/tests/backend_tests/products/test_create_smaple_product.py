@@ -11,16 +11,16 @@ pytestmark = [pytest.mark.products, pytest.mark.smoke, pytest.mark.BE]
 # create a subclass to create a sample product
 def test_create_a_sample_product():
 
-    #create payload with some data for prduct discription
-    payload = dict() # data will be in dictionary format (Jason format)
-    payload['name'] = generate_random_string(10) #will generate random name for the product
-    payload['type'] = "sample" #will define the type of product
-    payload['price'] = "18.99" #price of the sample product
+    # create a payload data requests to sent for product description
+    payload = dict()  # data will be in dictionary format (Json format)
+    payload['name'] = generate_random_string(10) # will generate random name for the product
+    payload['type'] = "simple"  # will define the type of product
+    payload['price'] = "18.99" # price of the sample product
 
     # make an API call to create a sample product
-    product_sample = ProductsAPIHelper().call_create_product(payload) # calling product helpers to create a product with data in the payload
+    product_sample = ProductsAPIHelper().call_create_product(payload)  # calling product helpers to create a product with data in the payload
 
-    # verify that response is not empty
+    # verify that the response is not empty
     assert product_sample, f"sample product create is empty.Payload: {payload}"
     assert product_sample['name']== payload['name'], f"sample product create api call response name is not matching \." \
                                                      f" Expected name: {payload['name']}, Actual name: {product_sample['name']}"
