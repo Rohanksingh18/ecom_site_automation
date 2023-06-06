@@ -20,13 +20,9 @@ class DBUtility(object):
 
 #Define class for creating DB connection
     def create_connection(self):
-
-
         connection = pymysql.connect(host=self.host, user=self.creds['db_user'],
                                      password=self.creds['db_password'],
                                      port=self.port)
-
-
         return connection
 
 # to execute the connection

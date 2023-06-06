@@ -20,7 +20,7 @@ def generate_random_email_and_password(domain=None, email_prefix=None):
 
     email = email_prefix + '_' + random_string + '@' + domain
 
-    password_length = 20
+    password_length = 10
     password_string = ''.join(random.choices(string.ascii_letters, k=password_length))
 
     random_info = {'email': email, 'password': password_string}
@@ -30,7 +30,7 @@ def generate_random_email_and_password(domain=None, email_prefix=None):
 
 # to generate random string
 
-def generate_random_string(length=10, prefix=None, suffix=None):
+def generate_random_string(length=8, prefix=None, suffix=None):
 
     random_string = ''.join(random.choices(string.ascii_lowercase, k=length))
 
