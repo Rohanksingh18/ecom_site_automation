@@ -1,7 +1,7 @@
 import pytest
-from ecom_test.src_file.pages.MyAccountSignedOutPage import MyAccountSignedOutPage
-from ecom_test.src_file.utilities.generic_utilities import generate_random_email_and_password
-from ecom_test.src_file.pages.MyAccountSignedIn import MyAccountSignedIn
+from ecom_test.src.pages.MyAccountSignedOutPage import MyAccountSignedOutPage
+from ecom_test.src.utilities.generic_utilities import generate_random_email_and_password
+from ecom_test.src.pages.MyAccountSignedIn import MyAccountSignedIn
 
 pytestmark = [pytest.mark.feregression, pytest.mark.fesmoke, pytest.mark.my_account]
 

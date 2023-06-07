@@ -1,7 +1,7 @@
 
 
-from ecom_test.src_file.utilities.generic_utilities import generate_random_email_and_password
-from ecom_test.src_file.utilities.wooAPIUtility import WooAPIUtility
+from ecom_test.src.utilities.generic_utilities import generate_random_email_and_password
+from ecom_test.src.utilities.wooAPIUtility import WooAPIUtility
 import logging as logger
 
 

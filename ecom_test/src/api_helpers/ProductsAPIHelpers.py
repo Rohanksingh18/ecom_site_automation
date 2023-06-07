@@ -1,6 +1,6 @@
 import logging as logger
 
-from ecom_test.src_file.utilities.wooAPIUtility import WooAPIUtility
+from ecom_test.src.utilities.wooAPIUtility import WooAPIUtility
 
 #Create a class for product API
 
