@@ -1,7 +1,7 @@
 import pytest
 import logging as logger
-from ecom_test.src_file.utilities.generic_utilities import generate_random_email_and_password
-from ecom_test.src_file.api_helpers.CustomersApiHelpers import CustomersAPIHelper
+from ecom_test.src.utilities.generic_utilities import generate_random_email_and_password
+from ecom_test.src.api_helpers.CustomersApiHelpers import CustomersAPIHelper
 
 
 

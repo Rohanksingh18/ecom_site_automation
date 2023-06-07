@@ -1,6 +1,6 @@
 
-from ecom_test.src_file.selenium_extended.SeleniumExtended import SeleniumExtended
-from ecom_test.src_file.pages.locators.MyAccountSignedInPageLocators import MyAccountSignedInPageLocator
+from ecom_test.src.selenium_extended.SeleniumExtended import SeleniumExtended
+from ecom_test.src.pages.locators.MyAccountSignedInPageLocators import MyAccountSignedInPageLocator
 
 
 class MyAccountSignedIn(MyAccountSignedInPageLocator):

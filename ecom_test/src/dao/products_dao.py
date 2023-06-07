@@ -1,5 +1,5 @@
 
-from ecom_test.src_file.utilities.dbUtility import DBUtility
+from ecom_test.src.utilities.dbUtility import DBUtility
 import random
 
  #create data base object for products

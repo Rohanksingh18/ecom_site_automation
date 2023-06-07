@@ -1,7 +1,7 @@
 
 import pytest
-from ecom_test.src_file.api_helpers.ProductsAPIHelpers import ProductsAPIHelper
-from ecom_test.src_file.utilities.generic_utilities import generate_random_string
+from ecom_test.src.api_helpers.ProductsAPIHelpers import ProductsAPIHelper
+from ecom_test.src.utilities.generic_utilities import generate_random_string
 import random
 
 pytestmark = [pytest.mark.products, pytest.mark.regression]
