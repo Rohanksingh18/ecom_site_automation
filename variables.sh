@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 set BASE_URL=http://localhost:8888/EcomSite/
 set BROWSER=chrome
 set RESULTS_DIR=$(pwd)/results
