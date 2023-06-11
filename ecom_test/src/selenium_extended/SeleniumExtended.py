@@ -92,3 +92,11 @@ class SeleniumExtended:
         element_text = elm.text
 
         return element_text
+
+    def wait_until_url_contains(self, url_substring, timeout=None):
+        timeout = timeout if timeout else self.default_timeout
+
+        elem = WebDriverWait(self.driver, timeout).until(
+            EC.url_contains(url_substring)
+        )
+

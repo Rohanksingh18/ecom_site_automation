@@ -1,4 +1,0 @@
-2023-06-07 19:56:01 INFO TEST: Verify create customer with only email and password has names as empty string
-2023-06-07 19:56:01 DEBUG Generating random email and password.
-2023-06-07 19:56:01 DEBUG randomly generated email and password: {'email': 'testuser_blkqbtkgmd@gmail.com', 'password': 'sDAEhWGwkU'}
-2023-06-07 19:56:01 DEBUG Starting new HTTP connection (1): localhost:8888
