@@ -2,7 +2,7 @@
 
 ## Description:
 Automated tests using Python & Pytest framework to test the Demo Ecom Site.
-The site under test is created using WordPress, Woocommerce, and the StoreFront theme. Example site for testing:http://localhost:8888/EcomSite
+The site under test is created using WordPress, Woocommerce, and the StoreFront theme. Example site to run this test:http://localhost:8888/EcomSite
 
 
 ## Prerequisites to run the tests:
