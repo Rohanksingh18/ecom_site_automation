@@ -1,4 +1,4 @@
-# Automated Tests (BE & FE) E-Commerce Site
+# Automated Tests (BE & FE) for an E-Commerce Site
 
 ## Description:
 Automated tests using Python & Pytest framework to test the Demo Ecom Site.
@@ -12,7 +12,7 @@ The site under test is created using WordPress, Woocommerce, and the StoreFront 
 
 ## Steps for setting up the framework and running the tests
 
-### Clone the code from my public git repository, the link is here:  
+### Clone the code from my public git repository. The link is here:  
 ```https://github.com/Rohanksingh18/ecom_site_automation.git```
 
 #### Navigate to the cloned directory:
@@ -29,19 +29,18 @@ Activate the created virtual environment:
 ```python3 -m pip install -r requirements.txt``` or ```python -m pip install -r requirements.txt``` (for windows)
 
 ## Set environment variables to run the tests:
-There are variables required by this framework to set the variables, write them in a file and run/source the file. For 'Mac/Linux systems, update and run the 'variables.sh' file, or for Windows systems create a batch ('enev.bat') file to set the variables.
+This framework requires variables to set the variables, write them in a file and run/source the file. For 'Mac/Linux systems, update and run the 'variables.sh' file; for Windows systems, create a batch ('enev.bat') file to set the variables.
 
 ```source variables.sh``` or ```C:\..\enev.bat``` (Windows)
 
 ## Run the Tests:
-To run all the tests including FE (Front end) and BE (Back end):
+To run all the tests, including FE (Front end) and BE (Back end):
 ```cd ecom_test```\
 ```python3 -m pytest tests```\
 or ```python -m pytest tests``` (Windows)
 
 To run by the test ID:
 ```python3 -m pytest -m tcid1``` or ```python -m pytest -m tcid1```(Windows)
-
 
 
 
