@@ -13,14 +13,14 @@ from ecom_test.src.config.MainConfigs import MainConfigs
 class TestEndToEndCheckoutGuestUser:
     @pytest.mark.tcid3
     def test_end_to_end_checkout_guest_user(self):
-        # get details from other helper pages
+        # getting details from other helper pages
         home_page = HomePage(self.driver)
         header = Header(self.driver)
         cart_page = CartPage(self.driver)
         checkout_page = CheckoutPage(self.driver)
         order_received_page = OrderReceivedPage(self.driver)
 
-        # got to the home page
+        # go to the home page
         home_page.go_to_the_home_page()
         # add an item to the cart
         home_page.click_add_to_cart_btn()
@@ -35,7 +35,7 @@ class TestEndToEndCheckoutGuestUser:
         # apply 100 % free coupon for free checkout
         coupon_code = MainConfigs.get_coupon_code('OFF')
         cart_page.apply_coupon(coupon_code)
-        # click on checkout button
+        # click on the checkout button
         cart_page.click_on_proceed_to_checkout()
         # fill the user information
         checkout_page.fill_in_billing_info()

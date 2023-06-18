@@ -2,8 +2,8 @@
 from ecom_test.src.utilities.dbUtility import DBUtility
 import random
 
- #create data base object for products
 
+# create a data base object for products
 class ProductsDAO(object):
 
 
@@ -19,7 +19,7 @@ class ProductsDAO(object):
 
         return random.sample(rs_sql, int(qty))
 
-    #subclass to get products by id
+    # subclass to get products by id
     def get_product_by_id(self, product_id):
 
         sql = f'''SELECT * FROM {self.db_helper.database}.{self.db_helper.table_prefix}posts 
@@ -36,7 +36,7 @@ class ProductsDAO(object):
 
         return self.db_helper.execute_select(sql)
 
-    #subclass to get random products that are not on the sale
+    # subclass to get random products that are not on the sale
     def get_random_products_that_are_not_on_sale(self, qty=1):
 
         sql = f"""SELECT * FROM {self.db_helper.database}.{self.db_helper.table_prefix}posts WHERE post_type = 'product' AND id NOT IN 

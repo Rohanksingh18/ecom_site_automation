@@ -17,7 +17,6 @@ def generate_random_email_and_password(domain=None, email_prefix=None):
     random_string = ''.join(random.choices(string.ascii_lowercase, k=random_email_sting_length))
 
 # email format
-
     email = email_prefix + '_' + random_string + '@' + domain
 
     password_length = 10
@@ -28,8 +27,8 @@ def generate_random_email_and_password(domain=None, email_prefix=None):
 
     return random_info
 
-# to generate random string
 
+# to generate random string
 def generate_random_string(length=8, prefix=None, suffix=None):
 
     random_string = ''.join(random.choices(string.ascii_lowercase, k=length))
@@ -41,6 +40,7 @@ def generate_random_string(length=8, prefix=None, suffix=None):
 
     return random_string
 
+
 # define a class used to generate  coupon code
 def generate_random_coupon_code(sufix=None, length=10):
 
@@ -50,8 +50,8 @@ def generate_random_coupon_code(sufix=None, length=10):
 
     return code
 
-# define a class used to convert html to text
 
+# define a class used to convert html to text
 def convert_html_to_text(input_html_string):
 
     class HTMLFilter(HTMLParser):

@@ -5,10 +5,10 @@ from ecom_test.src.selenium_extended.SeleniumExtended import SeleniumExtended
 
 from ecom_test.src.config.MainConfigs import MainConfigs
 
+
 class MyAccountSignedOutPage(MyAccountSignedOutPageLocators):
 
     endpoint = '/my-account/'
-
 
     def __init__(self, driver):
         self.driver = driver

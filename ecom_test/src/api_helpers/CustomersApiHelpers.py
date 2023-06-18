@@ -5,7 +5,6 @@ from ecom_test.src.utilities.wooAPIUtility import WooAPIUtility
 import logging as logger
 
 
-
 class CustomersAPIHelper:
 
     def __init__(self):

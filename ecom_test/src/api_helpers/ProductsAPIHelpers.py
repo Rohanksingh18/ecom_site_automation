@@ -2,8 +2,8 @@ import logging as logger
 
 from ecom_test.src.utilities.wooAPIUtility import WooAPIUtility
 
-#Create a class for product API
 
+# Create a class for product API
 class ProductsAPIHelper:
 
     def __init__(self):
@@ -42,6 +42,6 @@ class ProductsAPIHelper:
     def call_update_product(self, product_id, payload=None):
         return self.woo_api_utility.put(f'products/{product_id}', params=payload)
 
-    #force delete
+    # force delete
     def call_delete_product(self, product_id, force=True):
         return self.woo_api_utility.delete(f'products/{product_id}', params={'force': force})

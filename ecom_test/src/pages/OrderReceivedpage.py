@@ -2,6 +2,7 @@
 from ecom_test.src.selenium_extended.SeleniumExtended import SeleniumExtended
 from ecom_test.src.pages.locators.OrderReceivedPageLocators import OrderReceivedPageLocators
 
+
 class OrderReceivedPage(OrderReceivedPageLocators):
 
     def __init__(self, driver):

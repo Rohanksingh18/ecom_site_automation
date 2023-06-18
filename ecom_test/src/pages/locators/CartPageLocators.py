@@ -1,6 +1,7 @@
 
 from selenium.webdriver.common.by import By
 
+
 class CartPageLocators:
     PRODUCT_NAMES_IN_CART = (By.XPATH, "//a[contains(text(),'Album')]")
     COUPON_FIELD = (By.ID, 'coupon_code')

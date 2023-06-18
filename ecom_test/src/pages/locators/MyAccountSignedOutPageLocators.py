@@ -1,6 +1,7 @@
 
 from selenium.webdriver.common.by import By
 
+
 class MyAccountSignedOutPageLocators:
 
     LOGIN_USER_NAME = (By.XPATH, '//*[@id="username"]')

@@ -1,6 +1,7 @@
 
 from selenium.webdriver.common.by import By
 
+
 class CheckoutPageLocators:
 
     BILLING_FIRST_NAME_FIELD = (By.NAME, 'billing_first_name')

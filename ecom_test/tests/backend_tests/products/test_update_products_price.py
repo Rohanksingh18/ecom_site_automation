@@ -83,10 +83,9 @@ def test_update_sales_field_by_updating_sales_price():
 
 
 # verify that after updating sale_price, it updates the sale_price field or 'on_sale'=True
-
 @pytest.mark.tcid39
 def test_updated_sale_price_updates_on_sale_true():
-    # getting  a product from DB which is not on_sale
+    # getting a product from DB, which is not on_sale
     product_helper = ProductsAPIHelper()
     filters = {'on_sale': False, 'per_page': 100}
     random_product = product_helper.call_list_products(filters)
@@ -99,7 +98,7 @@ def test_updated_sale_price_updates_on_sale_true():
 
     # update the sale_price of the selected product
     sale_price = float(info['regular_price']) * 0.8  # Here updating the new sale_price by\
-    # adding 20% discount on the selected product.
+    # adding a 20 % discount on the selected product.
     pyload = dict()
     pyload['sale_price'] = str(sale_price)
     product_helper.call_update_product(product_id, payload=pyload)

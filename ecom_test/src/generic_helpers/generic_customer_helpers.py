@@ -2,7 +2,6 @@
 from ecom_test.src.api_helpers.CustomersApiHelpers import CustomersAPIHelper
 
 
-
 class GenericCustomerHelpers:
     def __init__(self):
         self.customer_api_helpers = CustomersAPIHelper()
