@@ -38,7 +38,7 @@ class TestHomePageSmoke:
         assert displayed_header == expected_header, f"Wrong heading displayed"\
                                                     f"Expected: {expected_header}, Actual: {displayed_header}"
 
-    # Verify the header menu is displayed
+    # Verify the header menu is displayed, tcid6.
     @pytest.mark.tcid6
     def test_header_menu_is_displayed(self, setup):
         self.header.assert_all_menu_items_displayed()
