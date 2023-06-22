@@ -7,8 +7,8 @@ from ecom_test.src.dao.products_dao import ProductsDAO
 pytestmark = [pytest.mark.products, pytest.mark.smoke, pytest.mark.BE]
 
 
+# Test case: Verify 'POST /products' creates a sample product.
 @pytest.mark.tcid34
-# create a subclass to create a sample product
 def test_create_a_sample_product():
     # create a payload data requests to sent for product description
     payload = dict()  # data will be in dictionary format (Json format)

@@ -29,7 +29,7 @@ class CustomersAPIHelper:
 
     def call_list_customers(self, payload=None):
 
-        # if max number of customers per page is not provided then use the max to reduce number of calls
+        # if the max number of customers per page is not provided, then use the max to reduce number of calls
         if not payload:
             payload = {'per_page': 100}
         elif 'per_page' not in payload.keys():
@@ -39,7 +39,7 @@ class CustomersAPIHelper:
         total_number_of_pages = rs_api['headers']['X-WP-TotalPages']
 
         all_customers = []
-        all_customers.extend(rs_api['response_json']) # since the first page is fetched use that
+        all_customers.extend(rs_api['response_json'])  # since the first page is fetched use that
         for i in range(2, int(total_number_of_pages) + 1):  # start from 2 because this will be used for page number and page 1 is fetched already
             logger.debug(f"List Customers page number: {i}")
             payload['page'] = i

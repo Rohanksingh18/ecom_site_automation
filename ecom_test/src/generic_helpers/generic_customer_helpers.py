@@ -13,6 +13,6 @@ class GenericCustomerHelpers:
         latest_customer = all_customers[0]
         max_customer_id = latest_customer['id']
 
-        return max_customer_id
+        return max_customer_id  # Returns the highest customer id available.
 
 
