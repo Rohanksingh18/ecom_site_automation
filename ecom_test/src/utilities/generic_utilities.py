@@ -3,8 +3,8 @@ import random
 import string
 from html.parser import HTMLParser
 
-# define a class that use to generate random email and password
 
+# define a class that uses to generate random email and password
 def generate_random_email_and_password(domain=None, email_prefix=None):
     logger.debug("Generating random email and password.")
 
@@ -42,11 +42,11 @@ def generate_random_string(length=8, prefix=None, suffix=None):
 
 
 # define a class used to generate  coupon code
-def generate_random_coupon_code(sufix=None, length=10):
+def generate_random_coupon_code(suffix=None, length=10):
 
     code = ''.join(random.choices(string.ascii_uppercase, k=length))
-    if sufix:
-        code += sufix
+    if suffix:
+        code += suffix
 
     return code
 
