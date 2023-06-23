@@ -2,5 +2,6 @@
 from selenium.webdriver.common.by import By
 
 
+# To verify logOut button is visible after registration
 class MyAccountSignedInPageLocator:
-    Left_Nav_LogOut_BTN = (By.XPATH, "//a[normalize-space()='Logout']") #to verfiy logOut button is visbile after registration
+    LEFT_NAV_LOGOUT_BTN = (By.XPATH, "//a[normalize-space()='Logout']") 
