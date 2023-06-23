@@ -15,13 +15,13 @@ class HomePage(HomePageLocators):
         self.driver.get(homepage_url)
 
     def click_add_to_cart_btn(self):
-        self.sl.wait_and_click(self.Add_To_Cart_BTN)
+        self.sl.wait_and_click(self.ADD_TO_CART_BTN)
 
     def get_all_product_elements(self):
-        return self.sl.wait_and_get_elements(self.Product_Elements)
+        return self.sl.wait_and_get_elements(self.PAGE_HEAD)
 
     def get_displayed_heading(self):
-        return self.sl.wait_and_get_text(self.Page_heading)
+        return self.sl.wait_and_get_text(self.PAGE_HEAD)
 
 
 
