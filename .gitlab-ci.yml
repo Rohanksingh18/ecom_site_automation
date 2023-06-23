@@ -13,17 +13,17 @@ variables:
   OPERA_REMOTE_WEBDRIVER_URL: http://opera_remote_browser:4444/wd/hub
 
 
-run_ecom_backend:
+run_ecom_smoke_backend:
   stage:
     run_tests
   image: python:3.11
   script:
-    - echo "STRING BACKEND TESTS....."
+    - echo "BACKEND TESTS STARTING....."
     - export PYTHONPATH=$(pwd)
     - pip3 install -r ./requirements.txt
     - source ./variables.sh
     - /bin/sh ./runner.sh ecom_test/tests/backend_tests "-m smoke"
-    - echo "DONE RUNNING BACKEND TESTS....."
+    - echo "BACKEND TESTS DONE ....."
   artifacts:
     when: always
     paths:
@@ -40,14 +40,9 @@ run_ecom_smoke_frontend:
     - name: selenium/standalone-chrome:4.7.1-20221208
       alias: chrome_remote_browser
   script:
-    - echo "STRING FRONTEND SMOKE TESTS....."
+    - echo " FRONTEND SMOKE TESTS STARTING....."
     - export PYTHONPATH=$(pwd)
     - pip3 install -r ./requirements.txt
     - source ./variables.sh
     - /bin/sh ./runner.sh ecom_test/tests/frontend_tests "-m smoke"
-    - echo "DONE FRONTEND SMOKE TESTS....."
-
-  artifacts:
-    when: always
-    paths:
-      - ./output
+    - echo "FRONTEND SMOKE TESTS DONE....."
