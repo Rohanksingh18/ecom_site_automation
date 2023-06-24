@@ -46,3 +46,9 @@ run_ecom_smoke_frontend:
     - source ./variables.sh
     - /bin/sh ./runner.sh ecom_test/tests/frontend_tests "-m smoke"
     - echo "FRONTEND SMOKE TESTS DONE....."
+
+  artifacts:
+    when: always
+    paths:
+      - ./output
+
