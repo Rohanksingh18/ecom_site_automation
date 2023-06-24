@@ -3,6 +3,7 @@
 import pytest
 from ecom_test.src.pages.MyAccountSignedOutPage import MyAccountSignedOutPage
 
+# These markers can be used to selectively run or exclude tests based on their assigned markers.
 pytestmark = [pytest.mark.feregression, pytest.mark.fesmoke, pytest.mark.my_account]
 
 
@@ -17,7 +18,7 @@ class TestLoginNegative:
         my_acct_page = MyAccountSignedOutPage(self.driver)
         my_acct_page.go_to_my_account()
 
-        # input un-registerd login credentials
+        # input un-registered login credentials
         my_acct_page.input_login_username("abcdef@gmail.com")
         my_acct_page.input_login_password("abcdefg123")
 
@@ -26,7 +27,7 @@ class TestLoginNegative:
 
         # verify the correct error message
         expected_err = "Unknown email address. Check again or try your username."
-        my_acct_page.wait_until_error_is_displayed(expected_err) #wait until page  is reloading
+        my_acct_page.wait_until_error_is_displayed(expected_err)  # wait until the page is reloading
 
 
 

@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 @pytest.mark.regression
 class TestListProductsWithFilter(object):
 
-    # create a method to get the list of products with filter for specific period of time from now
+    # Test case: Verify 'List Products' with filter 'after'.
     @pytest.mark.tcid35
     def test_list_products_with_filter_after(self):
         # Create a payload data request to be sent

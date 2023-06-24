@@ -1,0 +1,54 @@
+
+
+stages:
+  - run_tests
+  - publish_results
+
+
+
+variables:
+  CHROME_REMOTE_WEBDRIVER_URL: http://chrome_remote_browser:4444/wd/hub
+  FIREFOX_REMOTE_WEBDRIVER_URL: http://firefox_remote_browser:4444/wd/hub
+  EDGE_REMOTE_WEBDRIVER_URL: http://edge_remote_browser:4444/wd/hub
+  OPERA_REMOTE_WEBDRIVER_URL: http://opera_remote_browser:4444/wd/hub
+
+
+run_ecom_smoke_backend:
+  stage:
+    run_tests
+  image: python:3.11
+  script:
+    - echo "BACKEND TESTS STARTING....."
+    - export PYTHONPATH=$(pwd)
+    - pip3 install -r ./requirements.txt
+    - source ./variables.sh
+    - /bin/sh ./runner.sh ecom_test/tests/backend_tests "-m smoke"
+    - echo "BACKEND TESTS DONE ....."
+  artifacts:
+    when: always
+    paths:
+      - ./output
+
+run_ecom_smoke_frontend:
+  stage:
+    run_tests
+  image: python:3.11
+  variables:
+    REMOTE_WEBDRIVER: $CHROME_REMOTE_WEBDRIVER_URL
+    BROWSER: remote_chrome
+  services:
+    - name: selenium/standalone-chrome:4.7.1-20221208
+      alias: chrome_remote_browser
+  script:
+    - echo " FRONTEND SMOKE TESTS STARTING....."
+    - export PYTHONPATH=$(pwd)
+    - pip3 install -r ./requirements.txt
+    - source ./variables.sh
+    - /bin/sh ./runner.sh ecom_test/tests/frontend_tests "-m smoke"
+    - echo "FRONTEND SMOKE TESTS DONE....."
+
+  artifacts:
+    when: always
+    paths:
+      - ./output
+

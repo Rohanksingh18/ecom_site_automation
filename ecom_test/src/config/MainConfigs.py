@@ -2,6 +2,7 @@
 import os
 import logging as logger
 
+
 class MainConfigs:
 
     URL_CONFIGS = {

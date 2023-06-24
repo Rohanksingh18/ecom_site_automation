@@ -6,9 +6,10 @@ import random
 pytestmark = [pytest.mark.products, pytest.mark.regression]
 
 
+# Test case: Verify update 'regular_price' updates the 'price' field.
 @pytest.mark.tcid36
 def test_update_regular_price_updates_price():
-    # Retrieve a random product from the database that are not on_sale.
+    # Retrieve a random product from the database that is not on_sale.
     product_helper = ProductsAPIHelper()
     filters = {'on_sale': False, 'per_page': 100}
     random_product = product_helper.call_list_products(filters)
@@ -50,10 +51,7 @@ def test_update_regular_price_updates_price():
 @pytest.mark.tcid37
 @pytest.mark.tcid38
 def test_update_sales_field_by_updating_sales_price():
-    """
-    "update the sale_price > 0, and verify that 'on_sale' is set to True"
-    :return: on_sale= True
-    """
+
     # create a random product with payloads for the test and verify the product has on_sale=False.
     product_helper = ProductsAPIHelper()
     regular_price = str(random.randint(10, 100)) + '.' + str(
@@ -67,14 +65,14 @@ def test_update_sales_field_by_updating_sales_price():
     assert not product_info['on_sale'], f" new product should not have 'on_sale=true'. Product id: {product_id}"
     assert not product_info['sale_price'], f" the new product should not have the value for 'sale_price'option"
 
-    # tcid37- update the sale_price and verify that 'on_sale' is set to true.
+    # Test case: Update the sale_price and verify that 'on_sale' is set to true, tcid37.
     sale_price = float(regular_price) * 0.8  # Here updating the new sale_price by adding 20% discount on the product.
     product_helper.call_update_product(product_id, {'sale_price': str(sale_price)})  # updating the new sale_price.
     sale_price_after_update = product_helper.call_retrieve_product(product_id)  # getting updated new sale_price
     assert sale_price_after_update['on_sale'], f" sale_price after update, though the on_sale field is still false.\"" \
                                                f"product_id: {product_id}"  # verifying
 
-    #  tcid38 update the sale_price to empty string and verify 'on_sale' field is set to false
+    # Test case: Update the sale_price to empty string and verify 'on_sale' field is set to false, tcid38.
 
     product_helper.call_update_product(product_id, {'sale_price': ''})
     sale_price_after_update = product_helper.call_retrieve_product(product_id)
@@ -82,11 +80,10 @@ def test_update_sales_field_by_updating_sales_price():
                                                    f"Product id: {product_id}"
 
 
-# verify that after updating sale_price, it updates the sale_price field or 'on_sale'=True
-
+# Test case: verify that after updating sale_price, it updates the sale_price field or 'on_sale'=True.
 @pytest.mark.tcid39
 def test_updated_sale_price_updates_on_sale_true():
-    # getting  a product from DB which is not on_sale
+    # getting a product from DB, which is not on_sale
     product_helper = ProductsAPIHelper()
     filters = {'on_sale': False, 'per_page': 100}
     random_product = product_helper.call_list_products(filters)
@@ -99,7 +96,7 @@ def test_updated_sale_price_updates_on_sale_true():
 
     # update the sale_price of the selected product
     sale_price = float(info['regular_price']) * 0.8  # Here updating the new sale_price by\
-    # adding 20% discount on the selected product.
+    # adding a 20 % discount on the selected product.
     pyload = dict()
     pyload['sale_price'] = str(sale_price)
     product_helper.call_update_product(product_id, payload=pyload)
@@ -107,6 +104,6 @@ def test_updated_sale_price_updates_on_sale_true():
     # verify the product sale_price is updated
     after_info = product_helper.call_retrieve_product(product_id)
     assert after_info['sale_price'] == str(sale_price), f"Updated product 'sale_price' however value did not matched." \
-                                                        f"Product id: {product_id}, Expected sale price: {sale_price}," \
+                                                        f"Product id: {product_id}, Expected sale price: {sale_price},"\
                                                         f"Actual sale price: {after_info['sale_price']}"
 

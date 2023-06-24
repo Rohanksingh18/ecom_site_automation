@@ -4,6 +4,7 @@ from ecom_test.src.pages.locators.CheckoutPageLocators import CheckoutPageLocato
 from ecom_test.src.utilities.generic_utilities import generate_random_email_and_password
 from ecom_test.src.config.MainConfigs import MainConfigs
 
+
 class CheckoutPage(CheckoutPageLocators):
 
     endpoint = '/checkout'

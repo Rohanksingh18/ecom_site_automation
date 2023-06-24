@@ -1,6 +1,7 @@
 
 import os
 
+
 class CredentialsUtility(object):
 
     def __init__(self):

@@ -1,6 +1,7 @@
 from ecom_test.src.selenium_extended.SeleniumExtended import SeleniumExtended
 from ecom_test.src.pages.locators.HeaderLocators import HeaderLocators
 
+
 class Header(HeaderLocators):
 
     expected_menu_items = ['Home', 'Cart', 'Checkout', 'My account', 'Sample Page']
@@ -9,7 +10,7 @@ class Header(HeaderLocators):
         self.driver = driver
         self.sl = SeleniumExtended(self.driver)
 
-    def click_on_cart_on_right_header(self):
+    def click_on_cart_on_right_header(self):  # this is the home_page cart option.
         self.sl.wait_and_click(self.CART_RIGHT_HEADER)
 
     def wait_until_cart_item_count(self, count):

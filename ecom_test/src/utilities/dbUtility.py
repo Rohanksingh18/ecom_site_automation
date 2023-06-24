@@ -5,6 +5,7 @@ import logging as logger
 from ecom_test.src.utilities.credentialsUtility import CredentialsUtility
 from ecom_test.src.config.MainConfigs import MainConfigs
 
+
 # Define Class for Data base Connection
 class DBUtility(object):
 
@@ -18,7 +19,7 @@ class DBUtility(object):
         self.database = self.db_configs['database']
         self.table_prefix = self.db_configs['table_prefix']
 
-#Define class for creating DB connection
+# Define class for creating DB connection
     def create_connection(self):
         connection = pymysql.connect(host=self.host, user=self.creds['db_user'],
                                      password=self.creds['db_password'],

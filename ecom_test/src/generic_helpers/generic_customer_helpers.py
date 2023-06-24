@@ -2,7 +2,6 @@
 from ecom_test.src.api_helpers.CustomersApiHelpers import CustomersAPIHelper
 
 
-
 class GenericCustomerHelpers:
     def __init__(self):
         self.customer_api_helpers = CustomersAPIHelper()
@@ -14,6 +13,6 @@ class GenericCustomerHelpers:
         latest_customer = all_customers[0]
         max_customer_id = latest_customer['id']
 
-        return max_customer_id
+        return max_customer_id  # Returns the highest customer id available.
 
 
