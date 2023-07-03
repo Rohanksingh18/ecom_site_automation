@@ -37,7 +37,7 @@ def test_create_with_user_email_password_only():
     # make an API call
     cust_obj = CustomersAPIHelper()
     cust_api_info = cust_obj.call_create_customer(email=email, password=password)
-    # verify the email and first name in the response by validating, first_name used to verify and it should be empty.
+    # verify the email and first name in the response by validating, first_name used to verify, and it should be empty.
     assert cust_api_info['email'] == email, f"created customer API response returned wrong email. Email: {email}"
     assert cust_api_info['first_name'] == '', f"created customer API response returned value of first_name" \
                                               f"but it should be empty"
@@ -63,12 +63,16 @@ def test_create_customer_fails_for_existing_email():
     cust_api_info = cust_obj.call_create_customer(email=existing_email, password="Pass1234", expected_status_code=400)
 
     # verify for a correct error message
-    assert cust_api_info['code'] == 'registration-error-email-exists', f"Created customer with existing user has wrong error 'code'"\
-                                                                       f"Expected error: 'registration-error-email-exists',"\
+    assert cust_api_info['code'] == 'registration-error-email-exists', f"Created customer with existing user\
+                                                                       has wrong error 'code'"\
+                                                                       f"Expected error:\
+                                                                       'registration-error-email-exists',"\
                                                                        f"Actual: {cust_api_info['code']}"
-    assert cust_api_info['message'] == 'An account is already registered with your email address. <a href="#" class="showlogin">Please log in.</a>', \
+    assert cust_api_info['message'] == 'An account is already registered with your email address.\
+                                       <a href="#" class="showlogin">Please log in.</a>', \
                                        f"Create customer with existing user error 'message' is not correct. " \
-                                       f"Expected error: 'An account is already registered with your email address. Please log in.', " \
+                                       f"Expected error: 'An account is already\
+                                       registered with your email address. Please log in.', " \
                                        f"Actual error: '{cust_api_info['message']}'"
 
 
@@ -90,11 +94,13 @@ def test_create_customer_fail_if_password_not_provided():
                                                f"Actual response: {response_json}"
 
 
-# Test case: Verify create customer with only email and password provided has the names/
-# (first name and last name) of the customer will be empty strings in the system.
 @pytest.mark.customers
 @pytest.mark.tcid31
 def test_create_customer_names_should_be_empty_string_if_not_provided():
+    """
+    Test case: Verify create customer with only email and password provided has
+    the names/(first name and last name) of the customer will be empty strings in the system.
+    """
     logger.info("TEST: Verify create customer with only email and password has names as empty string")
 
     # generate email and password
