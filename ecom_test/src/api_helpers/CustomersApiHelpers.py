@@ -29,7 +29,7 @@ class CustomersAPIHelper:
 
     def call_list_customers(self, payload=None):
 
-        # if the max number of customers per page is not provided, then use the max to reduce number of calls
+        # if the max number of customers per page is not provided, then use the max to reduce the number of calls
         if not payload:
             payload = {'per_page': 100}
         elif 'per_page' not in payload.keys():

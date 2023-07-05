@@ -79,7 +79,8 @@ def test_delete_a_none_existing_customer(create_customer):
     Steps:
     1. Retrieve the maximum customer ID.
     2. Generate a non-existing customer ID by adding 100 to the maximum ID.
-       - To get a customer that does not exist, we get the maximum customer ID and make the call for an ID bigger than that.
+       - To get a customer that does not exist, we get the maximum customer ID
+         and make the call for an ID bigger than that.
        - Since customers might be created by other methods, it's not a good idea to just increase the max ID by 1.
        - To be safe, let's increase it by 100 or more. Even 100 can be small, for example, if a load test is running.
     3. Make the DELETE call with the non-existing customer ID.
