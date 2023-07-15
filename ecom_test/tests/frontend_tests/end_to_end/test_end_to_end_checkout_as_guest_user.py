@@ -32,7 +32,7 @@ class TestEndToEndCheckoutGuestUser:
         assert len(
             product_name) == 1, f" 1 product expected but result is {len(product_name)}"  # verifying by assertion
 
-        # apply 100 % free coupon for free checkout
+        # apply 100 % free cart for free checkout
         coupon_code = MainConfigs.get_coupon_code('OFF')
         cart_page.apply_coupon(coupon_code)
         # click on the checkout button
