@@ -64,6 +64,6 @@ class TestCartExpiredCoupon:
         # Step 6: Get the displayed error message
         err_msg = self.cart.get_displayed_error()
 
-        # Step 7: Verify that the error message is 'This coupon has expired (Taken from website)'
+        # Step 7: Verify that the error message is 'This coupon has expired (Taken from ecom-website)'
         assert err_msg == 'This coupon has expired.', "Expired coupon error-msg not displayed."
 

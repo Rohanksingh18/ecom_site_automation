@@ -22,9 +22,9 @@ class CouponsAPIHelper:
     def call_retrieve_coupon(self, coupon_id):
         """
         Calling 'retrieve_coupon'the get method of
-        the woo_api_utility instance with the cart ID as a parameter.
+        the woo_api_utility instance with the Coupon_ID as a parameter.
         """
-        logger.debug(f"Calling retrieve a cart. Coupon id: {coupon_id}")
+        logger.debug(f"Calling retrieve a coupon. Coupon id: {coupon_id}")
         return self.woo_api_utility.get(f'coupons/{coupon_id}')
 
     def call_list_all_coupons(self, payload=None):
@@ -37,7 +37,7 @@ class CouponsAPIHelper:
 
     def call_delete_coupon(self, coupon_id, force=True):
         """
-        This method makes a 'DELETE' request to delete a cart.
+        This method makes a 'DELETE' request to delete a coupon.
         """
         logger.debug(f"Calling list all coupons.")
         return self.woo_api_utility.delete(f'coupons/{coupon_id}', params={"force": force})

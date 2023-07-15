@@ -41,7 +41,7 @@ def generate_random_string(length=8, prefix=None, suffix=None):
     return random_string
 
 
-# define a class used to generate  cart code
+# define a class used to generate coupon code
 def generate_random_coupon_code(suffix=None, length=10):
 
     code = ''.join(random.choices(string.ascii_uppercase, k=length))

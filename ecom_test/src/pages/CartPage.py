@@ -39,7 +39,7 @@ class CartPage(CartPageLocators):
         if expect_success:
             displayed_notice = self.get_displayed_message()
             assert displayed_notice == 'Coupon code applied successfully.', \
-                f"Applied cart '{coupon_code}' but did not get successful messages."
+                f"Applied coupon '{coupon_code}' but did not get successful messages."
 
     def get_displayed_message(self):
         txt = self.sl.wait_and_get_text(self.CART_PAGE_MESSAGE)

@@ -77,7 +77,7 @@ class TestProductsReviewsSmoke(object):
         review_retrieved = product_review_helper.get_product_review(review['id'])
 
         # Determine the expected status based on the review status parameter
-        expected_status = 'hold' if review_status in ('untrash', 'unspam') else review_status
+        expected_status = 'hold' if review_status in ('un-trash', 'un-spam') else review_status
 
         # Verify that the created review has the expected status
         assert review_retrieved['status'] == expected_status, \
@@ -116,11 +116,10 @@ class TestProductsReviewsSmoke(object):
 
         # Step 3: Capture the response or error message
         expected_error_message = {'code': 'rest_invalid_param', 'data': {'details': {
-            'status': {'code': 'rest_not_in_enum', 'data': None, 'message': 'status is not one of approved, '
-                                                                            'hold, spam, unspam, trash, and untrash.'}},
-            'params': {'status': 'status is not one of approved, hold, spam, unspam, trash, and untrash.'},'status':
-                400}, 'message': 'Invalid parameter(s): status'
-                                  }
+            'status': {'code': 'rest_not_in_enum', 'data': None, 'message': 'status is not one of approved,'
+                                                                            'hold, spam, un-spam, trash, and un-trash.'}},
+            'params': {'status': 'status is not one of approved, hold, spam, un-spam, trash, and un-trash.'}, 'status':
+                400}, 'message': 'Invalid parameter(s): status'}
 
         # Step 4: Verify that the review is not created
         assert review['code'] == expected_error_message['code'], \

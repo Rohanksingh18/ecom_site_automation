@@ -31,7 +31,7 @@ def my_setup():
                          ])
 def test_create_coupon_percent_discount_type(my_setup, discount_type):
     """
-    Create a new cart with 'discount_type=None'. If None is given, check for default.
+    Create a new coupon with 'discount_type=None'. If None is given, check for default.
     The expected discount type is determined based on the value of the discount_type parameter.
     If discount_type is None, the expected discount type is set to 'fixed_cart'.
     Otherwise, it is set to the value of discount_type.
@@ -54,15 +54,15 @@ def test_create_coupon_percent_discount_type(my_setup, discount_type):
     rs_coupon = coupon_helper.call_create_coupon(payload=pyload)
     coupon_id = rs_coupon['id']
 
-    # Verify cart is created. This method retrieves the cart details from the API.
+    # Verify coupon is created. This method retrieves the coupon details from the API.
     rs_coupon_2 = coupon_helper.call_retrieve_coupon(coupon_id)
 
     # Verification of the responses.
-    assert rs_coupon_2['amount'] == pct_off, f"Create cart with % off responded {rs_coupon_2['amount']} for amount."\
+    assert rs_coupon_2['amount'] == pct_off, f"Create coupon with % off responded {rs_coupon_2['amount']} for amount."\
                                              f"Expected: {pct_off}, Actual: {rs_coupon_2['amount']}."
-    assert rs_coupon_2['code'] == coupon_code.lower(), f"Created cart response has wrong 'code'. "\
+    assert rs_coupon_2['code'] == coupon_code.lower(), f"Created coupon response has wrong 'code'. "\
                                                        f"Expected: {coupon_code.lower()}, Actual: {rs_coupon_2['code']}."
-    assert rs_coupon_2['discount_type'] == expected_discount_type, f"Create cart responded with wrong 'discount_type'."\
+    assert rs_coupon_2['discount_type'] == expected_discount_type, f"Create coupon responded with wrong 'discount_type'."\
                                                                    f"Expected: {expected_discount_type}, Actual:\
                                                                    {rs_coupon_2['discount_type']}."
 
@@ -71,7 +71,7 @@ def test_create_coupon_percent_discount_type(my_setup, discount_type):
 def test_create_coupon_with_invalid_type():
     """
     Test case (tcid47) is to verify that using an invalid value for
-    the 'discount_type' parameter during cart creation
+    the 'discount_type' parameter during coupon creation
     will result in the correct error message. The payload is assigned a randomly generated string.
     The WooAPIUtility().post() method is called with the 'coupons' endpoint and the prepared payload.
     The expected status code is set to 400 to indicate an error response.
@@ -84,10 +84,10 @@ def test_create_coupon_with_invalid_type():
     rs_coupon = WooAPIUtility().post('coupons', params=pyload, expected_status_code=400)
 
     # Verification by assertions.
-    assert rs_coupon['code'] == 'rest_invalid_param', f"Created cart with invalid 'discount_type' " \
+    assert rs_coupon['code'] == 'rest_invalid_param', f"Created coupon with invalid 'discount_type' " \
                                                       f"returned 'code={rs_coupon['code']}',\
                                                       Expected code = 'rest_invalid_param' "
-    assert rs_coupon['message'] == 'Invalid parameter(s): discount_type', f"Created cart with invalid 'discount_type'"\
+    assert rs_coupon['message'] == 'Invalid parameter(s): discount_type', f"Created coupon with invalid 'discount_type'"\
                                                                           f"returned 'message={rs_coupon['message']}',\
                                                             Expected message = 'Invalid parameter(s): discount_type',"
 

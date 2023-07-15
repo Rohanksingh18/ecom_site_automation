@@ -74,7 +74,9 @@ class TestProductsReviewsSmoke(object):
 
     @pytest.mark.tcid50
     def test_review_creation_should_not_fail_if_reviewer_is_different(self):
-        """All fields have the same value but the 'reviewer' is changes. Expecting successful review creation."""
+        """All fields have the same value but the 'reviewer' is changes.
+           Expecting successful review creation.
+        """
         # Create a review for the product
         review_rs = self.product_review_helper.create_random_review_for_product(self.product_id)
 
