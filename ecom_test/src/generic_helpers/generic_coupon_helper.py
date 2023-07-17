@@ -23,8 +23,8 @@ class GenericCouponHelper:
 
         payload = {
             "code": coupon_code,
-            "discount_type": "percent",
-            "amount": "100",
+            "discount_type": discount_type,
+            "amount": amount,
             "date_expires": expiration_date
         }
 

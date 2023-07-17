@@ -91,8 +91,9 @@ class TestProductsReviewsSmoke(object):
         )
 
         # Verify the second review is created by checking its status.
-        # The second call's response code is also confirmed to be 201.
         assert rs_duplicate['status'] == 'approved'
+        # The second call's response code is also confirmed to be 201.
+        assert not rs_duplicate['reviewer'] == 'reviewer'
 
     @pytest.mark.tcid51
     def test_review_creation_should_not_fail_if_review_is_different(self):
@@ -112,6 +113,7 @@ class TestProductsReviewsSmoke(object):
 
         # verify the second review is created by checking its status.
         assert rs_duplicate['status'] == 'approved'
+        assert not rs_duplicate['review'] == 'review'
 
     @pytest.mark.tcid52
     def test_review_creation_should_not_fail_if_reviewer_email_is_different(self):
@@ -134,10 +136,16 @@ class TestProductsReviewsSmoke(object):
 
         # Verify the second review is created and approved
         assert rs_duplicate['status'] == 'approved'
+        assert not rs_duplicate['reviewer_email'] == 'reviewer_email'
 
     @pytest.mark.tcid53
     def test_verify_default_status_for_create_review_is_approved(self):
+        """
+        Verify the default status is "approved" if the status is not provided in payload
+        """
         # Create a review for the product
         review_rs = self.product_review_helper.create_random_review_for_product(self.product_id)
         # Verify the second review is created and approved
-        assert review_rs['status'] == 'approved'
+        assert review_rs['status'] == 'approved', f"status of Review is approved by default."
+
+

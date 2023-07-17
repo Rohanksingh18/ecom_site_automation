@@ -22,9 +22,9 @@ class CouponsAPIHelper:
     def call_retrieve_coupon(self, coupon_id):
         """
         Calling 'retrieve_coupon'the get method of
-        the woo_api_utility instance with the Coupon_ID as a parameter.
+        the woo_api_utility instance with the coupon ID as a parameter.
         """
-        logger.debug(f"Calling retrieve a coupon. Coupon id: {coupon_id}")
+        logger.debug(f"Calling retrieve a coupon. coupon id: {coupon_id}")
         return self.woo_api_utility.get(f'coupons/{coupon_id}')
 
     def call_list_all_coupons(self, payload=None):
