@@ -32,8 +32,8 @@ def test_product_total_sales_updated(setup, ordered_qty):
     attribute gets updated correctly when items are ordered.
 
     Subpart:
-    - Ordered quantity: 1 item (tcid25)
-    - Ordered quantity: 3 items (tcid26)
+    - Ordered quantity: 1 item (tcid60)
+    - Ordered quantity: 3 items (tcid61)
 
     Steps:
     1. Prepare the test environment by setting up generic product and order helpers.

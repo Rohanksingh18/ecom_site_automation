@@ -13,7 +13,7 @@ class GenericProductHelper:
 
     def __init__(self):
         # Initialize the ProductsAPIHelper
-        self.customers_api_helper = ProductsAPIHelper()
+        self.products_api_helper = ProductsAPIHelper()
 
     def get_random_products(self, qty=1, **kwargs):
         """
@@ -31,7 +31,7 @@ class GenericProductHelper:
         """
 
         payload = {"per_page": 100}
-        products = self.customers_api_helper.call_list_products(payload=payload)
+        products = self.products_api_helper.call_list_products(payload=payload)
 
         return random.sample(products, int(qty))
 
@@ -42,7 +42,7 @@ class GenericProductHelper:
         :param product_id: ID of the product.
         :return: Product details.
         """
-        return self.customers_api_helper.call_get_product_by_id(product_id)
+        return self.products_api_helper.call_get_product_by_id(product_id)
 
     def create_a_product(self, product_type="simple", **kwargs):
         """

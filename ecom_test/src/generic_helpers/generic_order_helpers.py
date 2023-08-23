@@ -19,22 +19,9 @@ class GenericOrderHelpers:
         Creates an order with provided or default payload, and returns the API response.
 
         Args:
-        Args:
             additional_args (dict, optional): Additional data to customize the order payload.
             expected_status_code (int, optional): The expected HTTP status code for the API response.
 
-           Coupon: to add coupon add "coupon_lines" field to "additional_args"
-            Example: "coupon_lines": [{"code": "<MY COUPON CODE>"}]
-        :param product_ids:
-        :param customer_id:
-        :param coupon_code:
-        :param additional_args: Must be a dictionary.
-            Example:
-                order_payload_addition = {
-                                    "line_items": [{"product_id": < some product id >, "quantity": 1}],
-                                    "coupon_lines": [{"code": < some coupon code >}],
-                                    "shipping_lines": [{"method_id": "flat_rate", "method_title": "Flat Rate", "total": "0.00"}]
-                                }
 
         Returns:
             dict: The API response after creating the order.

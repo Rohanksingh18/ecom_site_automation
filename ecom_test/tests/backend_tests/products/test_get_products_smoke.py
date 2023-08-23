@@ -1,4 +1,6 @@
 from ecom_test.src.utilities.wooAPIUtility import WooAPIUtility
+from ecom_test.src.dao.products_dao import ProductsDAO
+from ecom_test.src.api_helpers.ProductsAPIHelpers import ProductsAPIHelper
 import pytest
 
 
@@ -24,20 +26,26 @@ def test_get_products_not_empty():
 
 
 @pytest.mark.tcid24
-def test_get_all_products():
+def test_get_product_by_id():
     """
     Verify that the API call 'products/id' returns a product with the given id.
     This test ensures that the system can successfully retrieve a product from
     the database by its unique identifier.
     """
-    # Step 1: Prepare the test environment and dependencies
-    woo_api_helper = WooAPIUtility()
+    # Step 1: Get a product (test data) from DB
+    rand_product = ProductsDAO().get_random_product_from_db(1)
+    rand_product_id = rand_product[0]['ID']
+    # The product's ID and name (post_title) are extracted from the fetched data.
+    db_name = rand_product[0]['post_title']
 
     # Step 2: Execute the API call to retrieve all products
-    rs_api = woo_api_helper.get(woo_endpoint='products')
+    product_helper = ProductsAPIHelper()
+    rs_api = product_helper.call_get_product_by_id(rand_product_id)
+    api_name = rs_api['name']
 
     # Step 3: Verify the response data
-    assert rs_api, f"Products not found in the API response"
+    assert db_name == api_name, f"Product retrieval by ID returned incorrect product. ID: {rand_product_id}" \
+                                f"Expected name: {db_name}, Actual name: {api_name}"
 
 
 
