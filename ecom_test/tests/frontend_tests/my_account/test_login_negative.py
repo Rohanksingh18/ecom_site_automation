@@ -1,5 +1,4 @@
 
-
 import pytest
 from ecom_test.src.pages.MyAccountSignedOutPage import MyAccountSignedOutPage
 
